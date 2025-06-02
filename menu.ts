@@ -1,6 +1,5 @@
 import readlinesync = require("readline-sync");
-
-import { colors } from './src/util/colors';  // seu arquivo de cores
+import { colors } from './src/util/colors'; 
 
 export function main() {
 
@@ -76,11 +75,17 @@ export function main() {
 
 }
 
+function keyPress(): void {
+    console.log(colors.reset, "");
+    console.log("\nPressione enter para continuar...");
+    readlinesync.prompt();
+}
+
 export function sobre(): void {
     console.log(`${colors.fg.lilac}\n*****************************************************${colors.reset}`);
     console.log(`${colors.fg.pink}Projeto Desenvolvido por: Naah Carvalho${colors.reset}`);
-    console.log(`${colors.fg.softblue}Generation Brasil - generation@generation.org${colors.reset}`);
-    console.log(`${colors.fg.pink}github.com/conteudoGeneration${colors.reset}`);
+    console.log(`${colors.fg.softblue}Email: naah_.carvalho@outlook.com${colors.reset}`);
+    console.log(`${colors.fg.pink}GitHub: https://github.com/naahcarvalho${colors.reset}`);
     console.log(`${colors.fg.lilac}*****************************************************${colors.reset}`);
 }
 
