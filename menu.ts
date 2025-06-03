@@ -1,9 +1,17 @@
 import readlinesync = require("readline-sync");
-import { colors } from './src/util/colors'; 
+import { colors } from './src/util/colors';
+import { Conta } from './src/model/Conta';
 
 export function main() {
 
     let opcao: number;
+
+    const conta: Conta = new Conta(1, 123, 1, "Adriana", 10000);
+    conta.visualizar();
+    conta.sacar(10500);
+    conta.visualizar();
+    conta.depositar(5000);
+    conta.visualizar();
 
     while (true) {
 
@@ -12,7 +20,6 @@ export function main() {
         console.log(`${colors.bg.lilac}${colors.fg.white}               BEM-VINDO AO GRANAGO 💜               ${colors.reset}`);
         console.log(`${colors.bg.lilac}${colors.fg.white}                                                     ${colors.reset}`);
         console.log(`${colors.bg.lilac}${colors.fg.white}*****************************************************${colors.reset}`);
-
         console.log(`${colors.fg.lilac}            1 - Criar Conta${colors.reset}`);
         console.log(`${colors.fg.pink}            2 - Listar todas as Contas${colors.reset}`);
         console.log(`${colors.fg.softblue}            3 - Buscar Conta por Número${colors.reset}`);
@@ -75,18 +82,18 @@ export function main() {
 
 }
 
-function keyPress(): void {
-    console.log(colors.reset, "");
-    console.log("\nPressione enter para continuar...");
-    readlinesync.prompt();
-}
-
-export function sobre(): void {
+function sobre(): void {
     console.log(`${colors.fg.lilac}\n*****************************************************${colors.reset}`);
     console.log(`${colors.fg.pink}Projeto Desenvolvido por: Naah Carvalho${colors.reset}`);
     console.log(`${colors.fg.softblue}Email: naah_.carvalho@outlook.com${colors.reset}`);
     console.log(`${colors.fg.pink}GitHub: https://github.com/naahcarvalho${colors.reset}`);
     console.log(`${colors.fg.lilac}*****************************************************${colors.reset}`);
+}
+
+function keyPress(): void {
+    console.log(colors.reset, "");
+    console.log("\nPressione enter para continuar...");
+    readlinesync.prompt();
 }
 
 main();
