@@ -1,6 +1,6 @@
 import { colors } from '../util/colors';
 
-export class Conta {
+export abstract class Conta {
 
     private _numero: number;
     private _agencia: number;
@@ -92,7 +92,8 @@ export class Conta {
         console.log(colors.fg.softblue + "Tipo da Conta: " + colors.reset + tipo);
         console.log(colors.fg.softblue + "Titular: " + colors.reset + this._titular);
         console.log(colors.fg.softblue + "Saldo: " + colors.reset + "R$ " + this._saldo.toFixed(2));
-        console.log(colors.fg.lilac + "\n*****************************************************\n" + colors.reset);
+        console.log();
+
     }
 
 }
