@@ -1,4 +1,4 @@
-import { colors } from '../util/colors';
+import { colors } from "../util/colors";
 
 export abstract class Conta {
 
